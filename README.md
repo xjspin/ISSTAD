@@ -16,6 +16,7 @@ https://www.mvtec.com/company/research/datasets/mvtec-loco
 https://dl.fbaipublicfiles.com/mae/visualize/mae_visualize_vit_large.pth
 
 ### Environment
+python=3.9.13
 matplotlib==3.6.0
 numpy==1.23.3
 opencv-python==4.6.0.66
