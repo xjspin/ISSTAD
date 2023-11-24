@@ -16,19 +16,19 @@ https://www.mvtec.com/company/research/datasets/mvtec-loco
 https://dl.fbaipublicfiles.com/mae/visualize/mae_visualize_vit_large.pth
 
 ### Environment
-python=3.9.13
-matplotlib==3.6.0
-numpy==1.23.3
-opencv-python==4.6.0.66
-pandas==1.5.1
-pillow==9.2.0
-scikit-learn==1.1.2
-scipy==1.9.1
-six==1.16.0
-sklearn==0.0
-timm==0.3.2
-torch==1.12.1+cu116
-tqdm==4.64.1
+python=3.9.13  
+matplotlib==3.6.0  
+numpy==1.23.3  
+opencv-python==4.6.0.66  
+pandas==1.5.1  
+pillow==9.2.0  
+scikit-learn==1.1.2  
+scipy==1.9.1  
+six==1.16.0  
+sklearn==0.0  
+timm==0.3.2  
+torch==1.12.1+cu116  
+tqdm==4.64.1  
 
 ### Run
 ```bash
