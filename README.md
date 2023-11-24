@@ -5,7 +5,7 @@ ISSTAD: Incremental Self-Supervised Learning Based on Transformer for Anomaly De
 
 Introduction
 -------------
-This repository contains the source code for ISSTAD implemented on the MVTec LOCO-AD dataset.
+This repository contains the source code for ISSTAD implemented on the MVTec LOCO AD dataset.
 
 Get Started
 -------------
