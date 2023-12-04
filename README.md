@@ -32,7 +32,7 @@ timm==0.3.2
 torch==1.12.1+cu116  
 tqdm==4.64.1
 
-The code runs on Windows or Linux systems with file systems on NTFS disks. Otherwise, the results may degrade, especially for the localization result of MVTec AD.
+The code runs on Windows or Linux systems with file systems on NTFS disks. Otherwise, the results may degrade, especially for the localization result on the MVTec AD dataset.
 
 ### Run
 MVTec AD dataset 
