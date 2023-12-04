@@ -221,6 +221,6 @@ if __name__ == '__main__':
                 f = open( auc_saved_path + 'pixel_level_result.txt','w')
                 best_pixel_auc_ = best_pixel_auc
                 best_pixel_auc_ = "{:.2f}".format(best_pixel_auc_*100)
-                print("image_auc", best_pixel_auc_, file=f)
+                print("pixel_auc", best_pixel_auc_, file=f)
                 f.close() 
 
