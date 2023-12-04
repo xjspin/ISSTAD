@@ -30,7 +30,9 @@ six==1.16.0
 sklearn==0.0  
 timm==0.3.2  
 torch==1.12.1+cu116  
-tqdm==4.64.1  
+tqdm==4.64.1
+
+The code runs on Windows or Linux systems with file systems on NTFS disks. Otherwise, the results may degrade, especially for the localization of MVTec AD.
 
 ### Run
 MVTec AD dataset 
