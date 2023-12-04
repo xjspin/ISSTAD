@@ -218,9 +218,9 @@ class ImageAugmentation:
 
             self.trans_list =  ['color','flip', 'noise']
             self.mask_list = ['rectangle', 'ellipse', 'polygon']
-            self.black_removed = False
-            self.mask_num = 3 
-            self.area_limitation = True 
+            self.black_removed = True
+            self.mask_num = 1
+            self.area_limitation = False 
 
         elif 'metal_nut' == object_name: 
 
