@@ -33,8 +33,11 @@ torch==1.12.1+cu116
 tqdm==4.64.1  
 
 ### Run
-# MVTec AD dataset 
+MVTec AD dataset 
+```bash
 python main_mvtec_ad.py
-
-# MVTec LOCO AD dataset 
+```
+MVTec LOCO AD dataset
+```bash
 python main_mvtec_loco_ad.py
+```
