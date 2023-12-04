@@ -188,6 +188,7 @@ class ImageAugmentation:
             self.mask_list = ['rectangle', 'ellipse', 'polygon']
             self.black_removed = False
             self.mask_num = 3
+            self.area_limitation = True
         
         elif 'juice_bottle' == object_name:
 
@@ -195,6 +196,7 @@ class ImageAugmentation:
             self.mask_list = ['rectangle', 'ellipse', 'polygon']
             self.black_removed = True
             self.mask_num = 3
+            self.area_limitation = True
 
         elif 'pushpins' == object_name:
 
@@ -202,6 +204,7 @@ class ImageAugmentation:
             self.mask_list = ['rectangle', 'ellipse', 'polygon']
             self.black_removed = False
             self.mask_num = 3
+            self.area_limitation = True
 
         elif 'screw_bag' == object_name:
 
@@ -209,19 +212,25 @@ class ImageAugmentation:
             self.mask_list = ['rectangle', 'ellipse', 'polygon']
             self.black_removed = True
             self.mask_num = 3
+            self.area_limitation = True
 
         elif 'splicing_connectors' == object_name: 
 
             self.trans_list =  ['color','flip', 'noise']
             self.mask_list = ['rectangle', 'ellipse', 'polygon']
             self.black_removed = False
-            self.mask_num = 3  
+            self.mask_num = 3
+            self.area_limitation = True  
     
 
     def __call__(self, image, label):
 
         trans = ImageTrans()
-        largest_box = get_largest_box(image)
+
+        if self.area_limitation:
+            largest_box = get_largest_box(image)
+        else:
+            largest_box = [0, 0, image.size[0], image.size[1]]
 
         if self.black_removed:
             img = remove_black(image)

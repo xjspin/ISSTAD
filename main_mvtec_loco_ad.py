@@ -36,28 +36,30 @@ if __name__ == '__main__':
     
     objects_list = ['breakfast_box', 'juice_bottle', 'pushpins', 'screw_bag', 'splicing_connectors']
 
-    data_dir = './data/'
-    resize_data_dir = './resize_data/'
+    data_dir = './data/mvteclocoAD/'
+    resize_data_dir = './resize_data/mvteclocoAD/'
     resize_images(data_dir, resize_data_dir) 
 
     for object_name in objects_list:
 
         print(object_name)
 
-        train_data_dir = './data/' + object_name + '/train'  
-        test_data_dir = './data/' + object_name + '/test'
+        train_data_dir = data_dir + object_name + '/train'  
+        test_data_dir = data_dir + object_name + '/test'
             
 
         #step1 sub-thread
-        python_script = './step1_mae_pretrain/main_step1.py' 
+        step1_saved_models_dir = './saved_models/step1_saved_models/mvteclocoAD/'
+        python_script = './step1_mae_pretrain/main_mvtec_loco_ad_step1.py' 
         process = subprocess.Popen(['python', python_script, 
                                     '--object_name', object_name,
-                                    '--data_path', train_data_dir ])
+                                    '--data_path', train_data_dir,
+                                    '--output_dir', step1_saved_models_dir ])
         process.wait()   
 
 
         #step2 sub-thread
-        python_script = './step2_pixel_ss_learning/main_step2.py' 
+        python_script = './step2_pixel_ss_learning/main_mvtec_loco_ad_step2.py' 
         process = subprocess.Popen(['python', python_script, 
                                     '--object_name', object_name, 
                                     '--train_data_dir', train_data_dir, 

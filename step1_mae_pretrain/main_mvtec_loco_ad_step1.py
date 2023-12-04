@@ -83,7 +83,7 @@ def get_args_parser():
 
     parser.add_argument('--output_dir', default='./saved_models/step1_saved_models/',
                         help='path where to save, empty for no saving')
-    parser.add_argument('--log_dir', default='./step1_mae_pretrain/logs/',
+    parser.add_argument('--log_dir', default='./step1_mae_pretrain/logs/mvteclocoAD/',
                         help='path where to tensorboard log')
     parser.add_argument('--device', default='cuda',
                         help='device to use for training / testing')

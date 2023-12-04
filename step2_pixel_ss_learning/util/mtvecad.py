@@ -8,7 +8,7 @@ import torchvision.transforms as transforms
 import os
 import random
 from PIL import ImageFilter, ImageDraw, ImageOps
-from util.aug import ImageAugmentation
+from util.mvtecad_aug import ImageAugmentation
 
 def is_image_file(filename):
     return any(filename.endswith(extension) for extension in ['.tif','.png', '.jpg', '.jpeg', '.PNG', '.JPG', '.JPEG'])
@@ -53,8 +53,9 @@ class AD_TRAIN(Dataset):
 
         self.filenames = self.get_image_paths(data_path)
 
-        object_name_list = ['breakfast_box', 'juice_bottle', 'pushpins', 'screw_bag', 'splicing_connectors']
+        object_name_list = ['capsule', 'screw', 'pill',  'cable', 'carpet','metal_nut', 'bottle', 'grid', 'hazelnut', 'leather', 'tile', 'toothbrush', 'transistor', 'wood', 'zipper']
         object_name = [s for s in object_name_list if s in data_path][0]
+        self.object_name = object_name
 
         self.img_transform = get_transform(convert=True, normalize=True)
         self.lab_transform = get_transform()
@@ -83,39 +84,46 @@ class AD_TRAIN(Dataset):
 
     def __len__(self):
         return len(self.filenames)
-
+    
 
 
 class AD_TEST(Dataset):
-    def __init__(self, args, data_path):
+    def __init__(self, args, img_path, lab_path):
         super(AD_TEST, self).__init__()
-        self.filenames = []
-        for root, dirs, files in os.walk(data_path):  
-                for file in files:  
-                    if os.path.splitext(file)[1] == '.png':  
-                        self.filenames.append(os.path.join(root, file))  
+        # 获取图片列表
+        self.img_filenames = []
+        self.lab_filenames = []
+        for root, dirs, files in os.walk(img_path):  # 获取所有文件
+                for file in files:  # 遍历所有文件名
+                    if os.path.splitext(file)[1] == '.png':   # 指定尾缀  ***重要***
+                        self.img_filenames.append(os.path.join(root, file))  # 拼接处绝对路径并放入列表
+        for root, dirs, files in os.walk(lab_path):  # 获取所有文件
+            for file in files:  # 遍历所有文件名
+                if os.path.splitext(file)[1] == '.png':   # 指定尾缀  ***重要***
+                    self.lab_filenames.append(os.path.join(root, file))  # 拼接处绝对路径并放入列表
 
-        self.transform = get_transform(convert=True, normalize=True) 
+
+        self.transform = get_transform(convert=True, normalize=True)  # convert to tensor and normalize to [-1,1]
+        self.label_transform = get_transform()  # only convert to tensor
+        self.n = 0
 
 
     def __getitem__(self, index):
-        img = Image.open(self.filenames[index]).convert('RGB')
-        hr1_img = self.transform(img)
-        
-        if 'good' in self.filenames[index]:
-            pn = 1
-            classes = 'good'
+        img = Image.open(self.img_filenames[index]).convert('RGB')
+        img = self.transform(img)
+        pn = 1
+        if 'good' in self.img_filenames[index]:
+            label = Image.new('L', [1024,1024], 0)
+            self.n = self.n + 1
+            pn = 0
         else:
-            pn = 0 
-            if 'logical_anomalies' in self.filenames[index]:
-                classes = 'logical_anomalies'
-            if 'structural_anomalies' in self.filenames[index]:
-                classes = 'structural_anomalies'
+            label = Image.open(self.lab_filenames[index-self.n])                      
+        label = self.label_transform(label)
 
-        return hr1_img, pn, self.filenames[index].replace('.png', '.tif').replace('./data/', './result/admap/'), classes
+        return img, pn, label, self.img_filenames[index].replace('.png', '.tif').replace('./data/', './result/admap/')
 
     def __len__(self):
-        return len(self.filenames)
+        return len(self.img_filenames)
 
 
 

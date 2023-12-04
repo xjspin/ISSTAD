@@ -21,8 +21,8 @@ import subprocess
 from util.losses import cross_entropy
 from util.misc import NativeScalerWithGradNormCount as NativeScaler
 from util.simm import SSIM
-from util.loco import AD_TEST, AD_TRAIN
-from util.options import parser
+from util.loco_ad import AD_TEST, AD_TRAIN
+from util.loco_options import parser
 from model import models
 
 def setdir(file_path):

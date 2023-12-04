@@ -32,22 +32,23 @@ parser.add_argument('--T_max', type=int, default=30,
 
 
 # path for loading data from folder
-parser.add_argument('--data_dir', default='./data/', type=str)
-parser.add_argument('--resize_data_dir', default='./resize_data/', type=str)
-parser.add_argument('--train_data_dir', default='./data/breakfast_box/train/good', type=str, help='image in training set')
-parser.add_argument('--test_data_dir', default='./data/breakfast_box/test', type=str, help='image in testing set')
+parser.add_argument('--data_dir', default='./data/mvtecAD/', type=str)
+parser.add_argument('--resize_data_dir', default='./resize_data/mvtecAD/', type=str)
+parser.add_argument('--train_data_dir', default='./data/mvtecAD/breakfast_box/train/good', type=str, help='image in training set')
+parser.add_argument('--test_data_dir', default='./data/mvtecAD/breakfast_box/test', type=str, help='image in testing set')
+parser.add_argument('--test_label_dir', default='./data/mvtecAD/breakfast_box/ground_truth', type=str)
 
 # pre_train_model loading
-parser.add_argument('--step1_saved_models_dir', default='./saved_models/step1_saved_models/', type=str, help='pre-trained modell with step1')
+parser.add_argument('--step1_saved_models_dir', default='./saved_models/step1_saved_models/mvtecAD/', type=str, help='pre-trained modell with step1')
 
 # network saving
-parser.add_argument('--saved_models_dir', default='./saved_models/step2_saved_models/', type=str, help='model save path')
+parser.add_argument('--saved_models_dir', default='./saved_models/step2_saved_models/mvtecAD/', type=str, help='model save path')
 
 # path for result save
-parser.add_argument('--log_saved_dir', default='./step2_pixel_ss_learning/logs/', type=str)
-parser.add_argument('--auc_saved_dir', default='./result/auc/', type=str)
-parser.add_argument('--admap_saved_dir', default='./result/admap/', type=str)
-parser.add_argument('--spro_saved_dir', default='./result/spro/', type=str)
+parser.add_argument('--log_saved_dir', default='./step2_pixel_ss_learning/logs/mvtecAD/', type=str)
+parser.add_argument('--auc_saved_dir', default='./result/auc/mvtecAD/', type=str)
+parser.add_argument('--admap_saved_dir', default='./result/admap/mvtecAD/', type=str)
+parser.add_argument('--spro_saved_dir', default='./result/spro/mvtecAD/', type=str)
 
 
 
