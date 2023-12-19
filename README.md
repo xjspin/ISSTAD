@@ -27,7 +27,6 @@ pillow==9.2.0
 scikit-learn==1.1.2  
 scipy==1.9.1  
 six==1.16.0  
-sklearn
 timm==0.3.2  
 torch==1.12.1+cu116  
 tqdm==4.64.1
