@@ -9,7 +9,7 @@ This repository contains the source code for ISSTAD implemented on the MVTec AD 
 
 Get Started
 -------------
-### Dataset
+### Datasets
 https://www.mvtec.com/company/research/datasets/mvtec-ad
 https://www.mvtec.com/company/research/datasets/mvtec-loco
 
@@ -27,7 +27,7 @@ pillow==9.2.0
 scikit-learn==1.1.2  
 scipy==1.9.1  
 six==1.16.0  
-sklearn==0.0  
+sklearn
 timm==0.3.2  
 torch==1.12.1+cu116  
 tqdm==4.64.1
