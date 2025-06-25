@@ -7,7 +7,7 @@ Introduction
 -------------
 This repository contains the source code for ISSTAD implemented on the MVTec AD dataset and the MVTec LOCO AD dataset.
 
-If you are interested in evaluating ISSTAD on the VisA and MPDD datasets, please refer to our extended implementation here:  
+If you are interested in evaluating ISSTAD on the **VisA** and **MPDD**  datasets, please refer to our extended implementation here:  
 👉 https://github.com/xjpp2016/ISSTAD_Extended
 
 Get Started
@@ -34,7 +34,7 @@ timm==0.3.2
 torch==1.12.1+cu116  
 tqdm==4.64.1
 
-The code is executable on Windows systems, and if running on Linux, it requires execution on a disk with an NTFS file system. Otherwise, the results may degrade, especially for the localization result on the MVTec AD dataset.
+The code is executable on Windows systems, and if running on Linux, it requires execution on a disk with an **NTFS**  file system. Otherwise, the results may degrade, especially for the localization result on the MVTec AD dataset.
 
 ### Run
 MVTec AD dataset 
