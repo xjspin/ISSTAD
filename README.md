@@ -7,6 +7,9 @@ Introduction
 -------------
 This repository contains the source code for ISSTAD implemented on the MVTec AD dataset and the MVTec LOCO AD dataset.
 
+If you are interested in evaluating ISSTAD on the VisA and MPDD datasets, please refer to our extended implementation here:  
+👉 https://github.com/xjpp2016/ISSTAD_Extended
+
 Get Started
 -------------
 ### Datasets
@@ -42,3 +45,13 @@ MVTec LOCO AD dataset
 ```bash
 python main_mvtec_loco_ad.py
 ```
+
+### Citation
+If you find this work helpful, please consider citing:
+
+@article{jin2023isstad,
+  title={ISSTAD: Incremental self-supervised learning based on transformer for anomaly detection and localization},
+  author={Jin, Wenping and Guo, Fei and Zhu, Li},
+  journal={arXiv preprint arXiv:2303.17354},
+  year={2023}
+}
