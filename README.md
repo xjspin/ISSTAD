@@ -48,10 +48,11 @@ python main_mvtec_loco_ad.py
 
 ### Citation
 If you find this work helpful, please consider citing:
-
+```
 @article{jin2023isstad,
   title={ISSTAD: Incremental self-supervised learning based on transformer for anomaly detection and localization},
   author={Jin, Wenping and Guo, Fei and Zhu, Li},
   journal={arXiv preprint arXiv:2303.17354},
   year={2023}
 }
+```
