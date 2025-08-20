@@ -48,6 +48,22 @@ python main_mvtec_loco_ad.py
 
 ### Citation
 If you find this work helpful, please consider citing:
+
+```
+@article{JIN_ISSTAD,
+title = {Incremental self-supervised learning based on transformer for anomaly detection and localization},
+journal = {Engineering Applications of Artificial Intelligence},
+volume = {160},
+pages = {111978},
+year = {2025},
+issn = {0952-1976},
+doi = {https://doi.org/10.1016/j.engappai.2025.111978},
+url = {https://www.sciencedirect.com/science/article/pii/S0952197625019864},
+author = {Wenping Jin and Fei Guo and Qi Wu and Li Zhu},
+keywords = {Anomaly detection, Vision transformer, Masked autoencoder, Pixel-level self-supervised learning},
+}
+```
+
 ```
 @article{jin2023isstad,
   title={ISSTAD: Incremental self-supervised learning based on transformer for anomaly detection and localization},
